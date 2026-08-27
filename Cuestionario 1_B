@@ -1,16 +1,31 @@
 
 ## Definición y Origen:
 1. ¿Qué es Spring Boot y para qué se utiliza?
+spring boot se utiliza para el despliegue de aplicaciones dentro del ecosistema spring, ayuda a una produccion rapida, reduciendo la configuracion inicial y codigo repetitivo
 2. ¿Cuál es la relación entre Spring Boot y el Spring Framework?
+el spring framework proporciona las bases principales pero requiere una configuracion en xml o java, el spring boot no lo reemplaza sino que se construye sobre el, agregando autoconfiguraciones, servidores embebidos y convenciones predeterminadas 
 3. ¿Para qué tipos de aplicaciones es ideal Spring Boot?
+es ideal para microservicios, APIs RESTful, aplicaciones web monoliticas, etc 
 
 ## Características Principales:
 1. ¿Cuál es una de las principales ventajas de usar Spring Boot en términos de configuración?
+la autoconfiguracion, analiza las librerias presentes en el classpath y los configura automaticamente sin necesidad de definirlos manualmente
 2. ¿Qué significa el principio de "convenio sobre configuración" en el contexto de Spring Boot?
+significa que el framework proporciona comportamientos y configuraciones por defecto razonables para la mayoria de casos de uso
 3. ¿Cómo ayuda Spring Boot a reducir el tiempo de arranque y desarrollo?
+starters: modulo de dependencias preconfiguradas para evitar gestionar versiones individuales de librerias 
+
+servidores embebidos: incluye servidores como tomcat, que permite ejecutar la aplicacion con un simple comando sin usar comandos externos
+
+DevTools: permite recargar la pagina en caliente durante el desarrollo 
 
 ## Ecosistema:
 1. ¿Qué otros proyectos forman parte del ecosistema de Spring junto con Spring Boot?
+Algunos otros proyectos que forman parte del ecosistema son:
+Spring Data: Simplifica acceso a datos SQL 
+Spring Security 
+Spring Batch
+
 2. ¿Cómo facilita Spring Boot la creación de aplicaciones independientes y arquitecturas de microservicios?
 
 ## MVC (Modelo-Vista-Controlador):
