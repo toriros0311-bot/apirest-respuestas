@@ -56,10 +56,18 @@ Si es MVC tradicional, el controlador devuelve un nombre de vista y los datos al
 
 ## Maven:
 1. ¿Qué es Maven y para qué se utiliza en proyectos Spring Boot?
+es una herramienta de gestion de proyectos y automatizacion de proyectos, se utiliza para controlar librerias externas, compilar codigo fuente, etc 
 2. ¿Qué tipo de información se define en el archivo `pom.xml` de un proyecto Spring Boot?
+el archivo pom.xml define informacion como:
+La ubicacion del proyecto 
+el proyecto padre de springboot 
+que version de java utiliza 
+las dependencias requeridas 
+plugins de compilacion y empaquetado 
 
 ## Configuración de un Proyecto Básico:
 1. ¿Qué es Spring Initializr y cómo facilita la generación de un proyecto Spring Boot?
+es una herramienta web oficial que genera la estructura inicial , facilitando la creacion al seleccionar la version de spring, lenguaje, gestor de dependencias 
 2. ¿Qué directorios y archivos son importantes en la estructura de un proyecto Spring Boot?
 3. ¿Cuál es el propósito del archivo `application.properties` en un proyecto Spring Boot?
 4. ¿Qué anotación se utiliza para marcar la clase principal de una aplicación Spring Boot y qué funciones realiza?
