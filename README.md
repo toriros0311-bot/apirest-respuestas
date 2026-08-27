@@ -46,14 +46,69 @@ que un metodo http sea idempotente quiere decir que este no realizara el mismo e
 13. ¿Por qué es JSON el formato de datos más comúnmente utilizado en las APIs REST?
   por que es sencillo tanto para computadoras como para humanos, ademas de su ligero texto y amplio soporte bibliografico en casi todos los lenguajes de programacion   
 14. Explica brevemente la estructura de un objeto JSON.
-    
+    los objetos JSON se delimitan entre llaves y contienen un conjunto no ordenados de pares de clave/valor, donde la clave es siempre una cadena de texto entre comillas dobles y separada de su valor por dos puntos : y los pares se separan por comas 
 15. ¿Qué tipos de datos pueden representarse en JSON?
+    Los tipos de datos que puede representar son:
+Cadenas de texto (String)
+
+Números (Number)
+
+Booleans (true o false)
+
+Nulos (null)
+
+Objetos (Object)
+
+Arreglos (Array)
 
 ## Postman
 16. ¿Qué es Postman y para qué se utiliza en el desarrollo de APIs?
+     Postman es un programa que permite simular envio de peticiones http a servidores remotos o locales, y asi comprobar y documentar, probar o automatizar el comportamiento de las APIs   
 17. Menciona dos funcionalidades importantes de Postman que facilitan el trabajo con APIs.
+Las dos funciones importantes del postman son:
+
+Gestion de entornos y variables: permiten reutilizar tokens o urls base modificandolos entre entornos
+
+Colecciones:  facilita la organizacion, guardado y ejecucion organizada de endpoints, ademas se puede agregar pruebas automatizadas 
 
 ## Ejercicios Prácticos
 18. Describe cómo implementarías una operación CRUD (Crear, Leer, Actualizar, Eliminar) en una API REST.
+   Operación,Método HTTP,Endpoint / URI,Descripción
+Create (Crear),POST,/productos,Recibe datos JSON en el cuerpo y registra un nuevo producto en la base de datos. Retorna estado 201 Created.
+Read (Leer),GET,/productos/productos/{id},Recupera la lista completa o un producto específico mediante su ID. Retorna 200 OK (o 404 si no existe).
+Update (Actualizar),PUTPATCH,/productos/{id},PUT reemplaza todo el recurso. PATCH modifica solo los atributos enviados. Retorna 200 OK o 204 No Content.
+Delete (Eliminar),DELETE,/productos/{id},Remueve el registro correspondiente al ID indicado de la base de datos. Retorna 200 OK o 204 No Content.
+    
 19. ¿Cómo usarías Postman para probar una nueva API que acabas de desarrollar?
-20. Propone un ejemplo de una API REST para gestionar un catálogo de productos y describe brevemente los endpoints necesarios.
+1ro:Empezaria creando una coleccion con el nombre del proyecto
+2ndo: defino una variable de entorno con la direccion base
+3ro: construiria endpoints asignados al metodo http apropiado y configuraria los encabezados requeridos
+4to: para los metodos como post o put  redactaria la estructura JSON  dentro de la pestaña
+5to: enviaria peticiones send para y verificaria codigos de estado http
+6to: escribiria aserciones simples en una pestaña de tests para automatizar comprobaciones 
+    
+21. Propone un ejemplo de una API REST para gestionar un catálogo de productos y describe brevemente los endpoints necesarios.
+
+GET /api/v1/productos
+
+Recupera el listado completo de productos. Permite filtrado o paginación por parámetros de consulta.
+
+POST /api/v1/productos
+
+Crea un nuevo producto recibiendo el objeto JSON con nombre, precio, descripción y stock en el cuerpo de la petición.
+
+GET /api/v1/productos/{id}
+
+Obtiene los detalles específicos de un único producto mediante su ID.
+
+PUT /api/v1/productos/{id}
+
+Sobrescribe todos los datos del producto con el ID especificado por la nueva versión recibida.
+
+PATCH /api/v1/productos/{id}
+
+Actualiza atributos específicos del producto (por ejemplo, ajustar únicamente el precio o el stock sin tocar el resto de campos).
+
+DELETE /api/v1/productos/{id}
+
+Elimina el producto indicado del sistema catálogo.
