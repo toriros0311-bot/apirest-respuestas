@@ -2,13 +2,19 @@
 
 ## Conceptos Básicos
 1. ¿Qué es una API y cuál es su función principal?
+   una api es una serie de conjuntos, reglas y especificaciones que permiten que los diferentes softwares se comuniquen entre si 
 2. Define brevemente el estilo arquitectónico REST.
+  el estilo arquitectonico REST es principalmente un estilo de comunicacion stateless (sin estado) que utiliza el protocolo http 
 3. ¿Qué significa que una API sea RESTful?
+  que una api sea RESTful significa que esta se maneja mediante protocolos http
 
 ## Recursos y URIs
 4. ¿Qué es un recurso en el contexto de una API REST?
+ un contexto en una api rest es cualquier tipo de informacion o concepto de negocio que la api expone  
 5. Explica la importancia de las URIs en una API REST.
+   Las Uris en una API REST son importantes por que son una direccion unica utilizada para identificar y localizar cada recurso del sistema
 6. Menciona tres características importantes de las URIs.
+   
 7. ¿Por qué es recomendable usar nombres en plural para las URIs que representan colecciones de recursos?
 
 ## Métodos HTTP
