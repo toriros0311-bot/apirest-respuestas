@@ -23,19 +23,36 @@ DevTools: permite recargar la pagina en caliente durante el desarrollo
 1. ¿Qué otros proyectos forman parte del ecosistema de Spring junto con Spring Boot?
 Algunos otros proyectos que forman parte del ecosistema son:
 Spring Data: Simplifica acceso a datos SQL 
-Spring Security 
-Spring Batch
+Spring Security: Maneja aunteticacion, autorizacion y proteccion contra las vulnerabilidades  
+Spring Batch: Framework para procesar grandes volumenes de datos
 
 2. ¿Cómo facilita Spring Boot la creación de aplicaciones independientes y arquitecturas de microservicios?
+Empaqueta aplicaciones con un archivo ejecutable unico que incluye su propio servidor http embebido 
 
 ## MVC (Modelo-Vista-Controlador):
 1. Describe el rol del Modelo en una aplicación Spring Boot.
+el modelo representa los datos de la aplicacion y la logica de negocio , manteniendo el estado del sistema y procesa las reglas operativas del usuario
 2. ¿Cómo se maneja la capa de datos en el modelo utilizando Spring Boot?
+se maneja utilizando Spring data JPA u Hibernate, se definen entidades mediante anotaciones como entity que son mapeados a traves de la base de datos y crean interfaces que extienen con jarRepository
 3. Explica cómo se genera la Vista en una aplicación Spring Boot.
+la vista se genera al cargar la informacion procesada, en aplicaciones renderizados desde el lado del servidor, el controlador lo toma junto a un model y datos, un motor de plantilla los une en un html dinamico para el navegador
 4. ¿Qué tecnologías de plantillas son compatibles con Spring Boot para generar la Vista?
+Las tecnologias compatibles con spring boot son: 
+Thymeleaf, Mustache, FreeMarker, Groovy Templates y JSP
 5. ¿Cuál es la función del Controlador en el patrón MVC y cómo se implementa en Spring Boot?
+funciona como un intermediario, recibiendo las peticiones http del cliente, invocando la logica de negocio , prepara los datos y decide la respuesta o vista que retornar
 6. ¿Qué diferencia hay entre un @Controller y un @RestController en Spring Boot?
+el controller esta diseñado para paginas web html que devuelven una vista , mientras que el restcontroller esta diseñado para los apis wen 
 7. Describe el flujo de trabajo de solicitud/respuesta en una aplicación Spring Boot.
+El cliente envía una petición HTTP.
+
+El DispatcherServlet (controlador frontal) intercepta la petición.
+
+Consulta al HandlerMapping para determinar qué método de qué controlador debe procesar la solicitud.
+
+El Controlador ejecuta la lógica invocando la capa de servicio/modelo.
+
+Si es MVC tradicional, el controlador devuelve un nombre de vista y los datos al DispatcherServlet, el cual usa un ViewResolver para renderizar la página HTML. Si es @RestController, se serializa directamente la respuesta (ej. a JSON) y se envía al cliente.
 
 ## Maven:
 1. ¿Qué es Maven y para qué se utiliza en proyectos Spring Boot?
