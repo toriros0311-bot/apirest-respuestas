@@ -69,10 +69,57 @@ plugins de compilacion y empaquetado
 1. ¿Qué es Spring Initializr y cómo facilita la generación de un proyecto Spring Boot?
 es una herramienta web oficial que genera la estructura inicial , facilitando la creacion al seleccionar la version de spring, lenguaje, gestor de dependencias 
 2. ¿Qué directorios y archivos son importantes en la estructura de un proyecto Spring Boot?
+los directorios y archivos importantes son:
+src/main/java
+src/main/resources
+src/test/java
+pom.xml
 3. ¿Cuál es el propósito del archivo `application.properties` en un proyecto Spring Boot?
+centralizar la configuracion externa de la aplicacion, permitiendo modificar aspectos como el puerto del servidor, credenciales de base de datos, etc
 4. ¿Qué anotación se utiliza para marcar la clase principal de una aplicación Spring Boot y qué funciones realiza?
+se utiliza @SpringBootApplication
 
 ## Ejemplo Práctico:
 1. Describe la estructura de un proyecto Spring Boot utilizando Mustache para las vistas.
+mi-proyecto/
+pom.xml
+src/
+    main/
+        java/
+        │   com/ejemplo/demo/
+        │        DemoApplication.java
+        │        controlador/
+        │           SaludoControlador.java
+        resources/
+            application.properties
+            templates/
+                saludo.mustache
 2. Explica el propósito del controlador `SaludoControlador.java` en el ejemplo proporcionado.
+package com.ejemplo.demo.controlador;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+
+@Controller
+public class SaludoControlador {
+
+    @GetMapping("/saludo")
+    public String saludar(Model model) {
+        model.addAttribute("nombre", "Usuario");
+        return "saludo"; // Referencia a saludo.mustache
+    }
+}
+
+
 3. ¿Cómo se define una plantilla Mustache y cómo se enlaza con el controlador en Spring Boot?
+<!-- src/main/resources/templates/saludo.mustache -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Página de Saludo</title>
+</head>
+<body>
+    <h1>¡Hola, {{nombre}}! Bienvenido a Spring Boot con Mustache.</h1>
+</body>
+</html>
